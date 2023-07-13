@@ -1,0 +1,555 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    --maincolor: red
+}
+
+#ctncalendar{
+    width: 80vw;
+    margin: auto;
+}
+
+
+
+#toolchoice{
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    border-bottom: 2px solid var(--maincolor);
+    justify-content: center;
+}
+
+#toolchoice li {
+    list-style: none;
+}
+
+a {
+    background-color: white;
+    color: var(--maincolor);
+    border: solid 1px var(--maincolor);
+    padding:0.5em;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.on{
+    background-color: var(--maincolor);
+    color: black;
+    border: solid 1px var(--maincolor);
+    padding:0.5em;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+}
+
+a:hover{
+ background-color: var(--maincolor);
+ color: white;
+ cursor: pointer;
+}
+
+
+#gridcld{
+    margin: 1em;
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    grid-template-rows: 1fr 11fr;
+    height: 80vh;
+    position: relative;
+}
+
+#coin{
+    display: flex;
+    align-content: center;
+}
+
+#jour{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    position: relative
+}
+
+#before-next{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.btncld{
+    border: none;
+    background: none;
+    color: red;
+}
+
+.btncld:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.colj{
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#heur{
+    display: grid;
+    align-items: center;
+}
+
+#heur div, .currentnum, .currentjour{
+    text-align: center;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.currentmoi{
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 0.4em;
+    color: var(--maincolor);
+}
+
+.newmoi{
+    border-left: solid var(--maincolor) 2px;
+}
+
+#jour-heur{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border: solid 2px var(--maincolor);
+}
+
+.j-semaine{
+    display: grid;
+    grid-template-rows: repeat(11, 1fr);
+    position: relative;
+}
+
+.bljr{
+    display: flex;
+    color: grey;
+    width: 100%;
+    height: 1fr;
+    justify-content:center;
+    align-items: center;
+    border-bottom: solid 1px var(--maincolor);
+}
+
+#j-lundi .bljr, #j-mardi .bljr, #j-mercredi .bljr, #j-jeudi .bljr, #j-vendredi .bljr, #j-samedi .bljr   {
+    border-right: double rgba(211, 211, 211, 0.629) 4px;
+}
+
+.out, #j-samedi .bljr, #j-dimanche .bljr{
+    background-color: rgba(145, 123, 127, 0.227);
+}
+
+.onstart{
+    flex-direction: row;
+    align-items: flex-end
+}
+
+.proj{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 5% repeat(5, 1fr) 5%;
+    grid-template-rows: repeat(11, 1fr);
+    position: absolute;
+}
+
+.blproj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10% 5% 10% 2%;
+    border-radius: 1vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    writing-mode: vertical-rl;
+    font-size: 0.8em;
+    font-weight:lighter;
+    letter-spacing: 0.08em;
+    overflow: hidden;
+}
+
+.blprojdown{
+    margin-bottom: 0%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.blprojup{
+    margin-top: 0%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.print3D{
+    grid-column: 2 /3;
+    background-color: red;
+}
+
+.lasercut{
+    grid-column: 3 /4;
+    background-color: green;
+}
+
+.traceur{
+    background-color: blue;
+    grid-column: 4 /5;
+}
+
+.vr{
+    background-color: cyan;
+    grid-column: 5 /6;
+}
+
+.riso{
+    
+    background-color: orange;
+    grid-column: 6 /7;
+}
+
+#ctnview{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#view {
+    position: absolute;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    border: red 2px solid;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 4;
+    pointer-events: all;
+    max-width: 60%;
+}
+
+
+#Xview{
+    color: red;
+    position: absolute;
+    right: 0.8em;
+    top: 0.5em;
+    font-size: 1.4em;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    z-index: 4;
+}
+
+#Xview:hover{
+    color: black;
+}
+
+#view h2{
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#view p{
+    padding-bottom: 0.7em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TOUTES LES PLAGES HORRAIRES */
+.h0-9{
+    grid-row: 1 / 2
+}
+
+.h0-10{
+    grid-row: 1 / 3
+}
+
+.h0-11{
+    grid-row: 1 / 4
+}
+
+.h0-12{
+    grid-row: 1 / 5
+}
+
+.h0-13{
+    grid-row: 1 / 6
+}
+
+.h0-14{
+    grid-row: 1 / 7
+}
+
+.h0-15{
+    grid-row: 1 / 8
+}
+
+.h0-16{
+    grid-row: 1 / 9
+}
+
+.h0-17{
+    grid-row: 1 / 10
+}
+
+.h0-18{
+    grid-row: 1 / 11
+}
+
+.h0-0{
+    grid-row: 1 / 12
+}
+
+.h9-10{
+    grid-row: 2 / 3
+}
+
+.h9-11{
+    grid-row: 2 / 4
+}
+
+.h9-12{
+    grid-row: 2 / 5
+}
+
+.h9-13{
+    grid-row: 2 / 6
+}
+
+.h9-14{
+    grid-row: 2 / 7
+}
+
+.h9-15{
+    grid-row: 2 / 8
+}
+
+.h9-16{
+    grid-row: 2 / 9
+}
+
+.h9-17{
+    grid-row: 2 / 10 
+}
+
+.h9-18{
+    grid-row: 2 / 11
+}
+
+.h9-0{
+    grid-row: 2 / 12
+}
+
+.h10-11{
+    grid-row: 3 / 4
+}
+
+.h10-12{
+    grid-row: 3 / 5
+}
+
+.h10-13{
+    grid-row: 3 / 6
+}
+
+.h10-14{
+    grid-row: 3 / 7
+}
+
+.h10-15{
+    grid-row: 3 / 8
+}
+
+.h10-16{
+    grid-row: 3 / 9
+}
+
+.h10-17{
+    grid-row: 3 / 10
+}
+
+.h10-18{
+    grid-row: 3 / 11
+}
+
+.h10-0{
+    grid-row: 3 / 12
+}
+
+.h11-12{
+    grid-row: 4 / 5
+}
+
+.h11-13{
+    grid-row: 4 / 6
+}
+
+.h11-14{
+    grid-row: 4 / 7
+}
+
+.h11-15{
+    grid-row: 4 / 8
+}
+
+.h11-16{
+    grid-row: 4 / 9
+}
+
+.h11-17{
+    grid-row: 4 / 10 
+}
+
+.h11-18{
+    grid-row: 4 / 11
+}
+
+.h11-0{
+    grid-row: 4 / 12
+}
+
+.h12-13{
+    grid-row: 5 / 6
+}
+
+.h12-14{
+    grid-row: 5 / 7
+}
+
+.h12-15{
+    grid-row: 5 / 8
+}
+
+.h12-16{
+    grid-row: 5 / 9
+}
+.h12-17{
+    grid-row: 5 / 10
+}
+.h12-18{
+    grid-row: 5 / 11
+}
+
+.h12-0{
+    grid-row: 5 / 12
+}
+
+.h13-14{
+    grid-row: 6 / 7
+}
+
+.h13-15{
+    grid-row: 6 / 8
+}
+
+.h13-16{
+    grid-row: 6 / 9
+}
+.h13-17{
+    grid-row: 6 / 10
+}
+
+.h13-18{
+    grid-row: 6 / 11
+}
+
+.h13-0{
+    grid-row: 6 / 12
+}
+
+.h14-15{
+    grid-row: 7 / 8
+}
+
+.h14-16{
+    grid-row: 7 / 9
+}
+
+.h14-17{
+    grid-row: 7 / 10
+}
+
+.h14-18{
+    grid-row: 7 / 11
+}
+
+.h14-0{
+    grid-row: 7 / 12
+}
+
+.h15-16{
+    grid-row: 8 / 9
+}
+
+.h15-17{
+    grid-row: 8 / 10
+}
+
+.h15-18{
+    grid-row: 8 / 11
+}
+
+.h15-0{
+    grid-row: 8 / 12
+}
+
+.h16-17{
+    grid-row: 9 / 10
+}
+
+.h16-18{
+    grid-row: 9 / 11
+}
+
+.h16-0{
+    grid-row: 9 / 12
+}
+
+.h17-18{
+    grid-row: 10 / 11
+}
+
+.h17-0{
+    grid-row: 10 / 12
+}
+
+.h18-0{
+    grid-row: 11 / 12
+}

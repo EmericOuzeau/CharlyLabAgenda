@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calandar</title>
+    <link rel="shortcut icon" href="asset/icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="ctncalendar">
+            <div id="toolchoice">
+                <li><a class="on">Imprimante 3D</a></li>
+                <li><a>Traceur Laser</a></li>
+                <li><a href="indexex.html">Découper Laser</a></li>
+                <li><a>Risographie</a></li>
+                <li><a>Tablette</a></li>
+            </div>
+            
+            <div id="gridcld">
+                <div id="coin"><img src="asset/colibri.svg" alt=""></div>
+                <div id="jour">
+                    <div class="colj" id="LU">
+                        <div class="currentmoi"></div>
+                        <div class="currentjour">Lu</div>
+                        <div class="currentnum"></div>
+                    </div>
+                    <div class="colj" id="MA">
+                        <div class="currentmoi"></div>
+                        <div class="currentjour">Ma</div>
+                        <div class="currentnum"></div>
+                    </div>
+                    <div class="colj" id="ME">
+                        <div class="currentmoi"></div>
+                        <div class="currentjour">Me</div>
+                        <div class="currentnum"></div>
+                    </div>
+                    <div class="colj" id="JE">
+                        <div class="currentmoi"></div>
+                        <div class="currentjour">Je</div>
+                        <div class="currentnum"></div>
+                    </div>
+                    <div class="colj" id="VE">
+                        <div class="currentmoi"></div>
+                        <div class="currentjour">Ve</div>
+                        <div class="currentnum"></div>
+                    </div>
+                    <div class="colj" id="SA">
+                        <div class="currentmoi"></div>
+                        <div class="currentjour">Sa</div>
+                        <div class="currentnum"></div>
+                    </div>
+                    <div class="colj" id="DI">
+                        <div class="currentmoi"></div>
+                        <div class="currentjour">Di</div>
+                        <div class="currentnum"></div>
+                    </div>
+                    <div id="before-next">
+                        <button class="btncld" id="gobefore">◀</button>
+                        <button  class="btncld" id="gonext">▶</button>
+                    </div>
+                </div>
+                <div id="heur">
+                    <div>00h-9h</div>
+                    <div>09h-10h</div>
+                    <div>10h-11h</div>
+                    <div>11h-12h</div>
+                    <div>12h-13h</div>
+                    <div>13h-14h</div>
+                    <div>14h-15h</div>
+                    <div>15h-16h</div>
+                    <div>16h-17h</div>
+                    <div>17h-18h</div>
+                    <div>18h-00h</div>
+                </div>
+                <div id="jour-heur">
+                    <div class="j-semaine" id="j-lundi">
+                        <div class="h00 bljr out"></div>
+                        <div class="h09 bljr"></div>
+                        <div class="h10 bljr"></div>
+                        <div class="h11 bljr"></div>
+                        <div class="h12 bljr"></div>
+                        <div class="h13 bljr"></div>
+                        <div class="h14 bljr"></div>
+                        <div class="h15 bljr"></div>
+                        <div class="h16 bljr"></div>
+                        <div class="h17 bljr"></div>
+                        <div class="h18 bljr out"></div>
+
+                        <div class="proj" id="proj-lu">
+                        </div>
+
+                    </div>
+                    
+                    <div class="j-semaine" id="j-mardi">
+                        <div class="h00 bljr out"></div>
+                        <div class="h09 bljr"></div>
+                        <div class="h10 bljr"></div>
+                        <div class="h11 bljr"></div>
+                        <div class="h12 bljr"></div>
+                        <div class="h13 bljr"></div>
+                        <div class="h14 bljr"></div>
+                        <div class="h15 bljr"></div>
+                        <div class="h16 bljr"></div>
+                        <div class="h17 bljr"></div>
+                        <div class="h18 bljr out"></div>
+
+                        <div class="proj" id="proj-ma">
+                        </div>
+
+                    </div>
+                    
+                    <div class="j-semaine" id="j-mercredi">
+                        <div class="h00 bljr out"></div>
+                        <div class="h09 bljr"></div>
+                        <div class="h10 bljr"></div>
+                        <div class="h11 bljr"></div>
+                        <div class="h12 bljr"></div>
+                        <div class="h13 bljr"></div>
+                        <div class="h14 bljr"></div>
+                        <div class="h15 bljr"></div>
+                        <div class="h16 bljr"></div>
+                        <div class="h17 bljr"></div>
+                        <div class="h18 bljr out"></div>
+
+                        <div class="proj" id="proj-me">
+                        </div>
+                                                
+                    </div>
+                    
+                    <div class="j-semaine" id="j-jeudi">
+                        <div class="h00 bljr out"></div>
+                        <div class="h09 bljr"></div>
+                        <div class="h10 bljr"></div>
+                        <div class="h11 bljr"></div>
+                        <div class="h12 bljr"></div>
+                        <div class="h13 bljr"></div>
+                        <div class="h14 bljr"></div>
+                        <div class="h15 bljr"></div>
+                        <div class="h16 bljr"></div>
+                        <div class="h17 bljr"></div>
+                        <div class="h18 bljr out"></div>
+
+                        <div class="proj" id="proj-je">
+                        </div>
+
+                    </div>
+                    
+                    <div class="j-semaine" id="j-vendredi">
+                        <div class="h00 bljr out"></div>
+                        <div class="h09 bljr"></div>
+                        <div class="h10 bljr"></div>
+                        <div class="h11 bljr"></div>
+                        <div class="h12 bljr"></div>
+                        <div class="h13 bljr"></div>
+                        <div class="h14 bljr"></div>
+                        <div class="h15 bljr"></div>
+                        <div class="h16 bljr"></div>
+                        <div class="h17 bljr"></div>
+                        <div class="h18 bljr out"></div>
+
+                        <div class="proj" id="proj-ve">
+                        </div>
+
+                    </div>
+                    
+                    <div class="j-semaine" id="j-samedi">
+                        <div class="h00 bljr out"></div>
+                        <div class="h09 bljr"></div>
+                        <div class="h10 bljr"></div>
+                        <div class="h11 bljr"></div>
+                        <div class="h12 bljr"></div>
+                        <div class="h13 bljr"></div>
+                        <div class="h14 bljr"></div>
+                        <div class="h15 bljr"></div>
+                        <div class="h16 bljr"></div>
+                        <div class="h17 bljr"></div>
+                        <div class="h18 bljr out"></div>
+
+                        <div class="proj" id="proj-sa">
+                        </div>
+
+                    </div>
+                    
+                    <div class="j-semaine" id="j-dimanche">
+                        <div class="h00 bljr out"></div>
+                        <div class="h09 bljr"></div>
+                        <div class="h10 bljr"></div>
+                        <div class="h11 bljr"></div>
+                        <div class="h12 bljr"></div>
+                        <div class="h13 bljr"></div>
+                        <div class="h14 bljr"></div>
+                        <div class="h15 bljr"></div>
+                        <div class="h16 bljr"></div>
+                        <div class="h17 bljr"></div>
+                        <div class="h18 bljr out"></div>
+
+                        <div class="proj" id="proj-di">
+                        </div>
+                        
+                    </div>
+                    
+                    
+
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+</body>
+<script src="script.js"></script>
+</html>
